@@ -1,7 +1,7 @@
 # Neural Network in go (golang)
 These are the source files of Version 1.0 of a artifical neural network in the Go programming language (Golang).
 
-# Neur onales Netzwerk in go (golang)
+# Neuronales Netzwerk in go (golang)
 Das ist die erste Version eines Neuronalen Netzwerkes in Go.
 
 # License
