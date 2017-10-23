@@ -43,7 +43,7 @@ type NNconfig struct { // to configurate a Neural Network
 }
 
 func (nn *NeuralNetwork) InitNeuralNetwork(nnConfig NNconfig)
-func (nn *NeuralNetwork) Train(ds DataSetInterface, epochs int) (err error) {
+func (nn *NeuralNetwork) Train(ds DataSetInterface, epochs int, learningRate float64) (err error) 
 func (nn *NeuralNetwork) Test(ds DataSetInterface) (result float64, err error) 
 ```
 
@@ -92,7 +92,7 @@ func trainAndTest(nnConfig NNconfig, dsConfig DSP.DSconfig) (error, float64) {
 	ds := new(DSP.MNIST_DataSet)
 	ds.InitDataSet(dsConfig)
 
-	err := nn.Train(ds, nn.epochs)
+	err := nn.Train(ds, nn.epochs, nn.learningRate)
 	if err != nil {
 		return err, 0.0
 	}
