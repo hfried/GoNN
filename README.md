@@ -1,7 +1,7 @@
 # Neural Network in go (golang)
 These are the source files of Version 1.0 of a artifical neural network in the Go programming language (Golang).
 
-# Neuronales Netzwerk in go (golang)
+# Neur onales Netzwerk in go (golang)
 Das ist die erste Version eines Neuronalen Netzwerkes in Go.
 
 # License
@@ -16,19 +16,19 @@ https://en.wikipedia.org/wiki/Artificial_neural_network
  
 # Functions of the own written artifical Neural Network
 
-* This program used only **standard go packages**. 
-* In the version 1.0 one can **config one or more neural network** with InputNodes, HiddenNodes, OutputNodes, Epochs and the LearningRate. 
-* There are an **interface** between the **Neural Network** and the **Data Set Port**. The Data Set Port read and prepare the training, validation (not jet used) and test data set. 
+* This program use only **standard go packages**. 
+* In the version 1.0 one can **config one or more neural networks** with InputNodes, HiddenNodes, OutputNodes, Epochs and the LearningRate. 
+* There is an **interface** between the **Neural Network** and the **Data Set Port**. The Data Set Port read and prepare the training, validation (not jet used) and test data set. 
 * A Data Set Port to **Yann LeCun's MNIST dataset of handwritten digits** is included, but you must download the MNIST dataset (see Yann LeCun's MNIST page: http://yann.lecun.com/exdb/mnist/ ).
-* The main program includes code to get **profile information**.
+* The main program includes a code to get **profile information**.
 
 # Das selbst geschriebene Neuronale Neetzwerk Programm  - Eigenschaften
 
 * Dieses Programm verwendet nur **Standard go Pakete**.
 * In der Version 1.0 kann eine **Konfiguration für ein oder mehrere Neuronale Netzwerke** mit den Parametern InputNodes, HiddenNodes, OutputNodes, Epochs und LearningRate erfolgen.
-* Es gibt eine **Schnittstelle** zwischen dem **Neuronalen Netz** (Neural Network) und den **Vorverarbeiten der Daten** (Data Set Port). Der Vorprozess zum Einlesen und Vorverarbeiten der Trainings-, Validierungs- (wird noch nicht verwendet) und Testdatensätze wird so von dem Neuronalen Netz getrennt.
+* Es gibt eine **Schnittstelle** zwischen dem **Neuronalen Netz** (Neural Network) und dem **Vorverarbeiten der Daten** (Data Set Port). Der Vorprozess zum Einlesen und Vorverarbeiten der Trainings-, Validierungs- (wird noch nicht verwendet) und Testdatensätze wird so von dem Neuronalen Netz getrennt.
 * Eine Implementation dieser Schnittstelle von **Yann LeCun's MNIST datensatz von handgeschriebenen Ziffern** ist enthalten. Die MNIST-Daten müssen heruntergeladen werden (siehe Yann LeCun's MNIST Seite:  http://yann.lecun.com/exdb/mnist/ ).
-* Das Hauptprogramm enthält Code zum Schreiben von **Profile-Informationen**. 
+* Das Hauptprogramm enthält einen Code zum Schreiben von **Profile-Informationen**. 
 
 
 # The Neural Network
@@ -39,7 +39,7 @@ type NNconfig struct { // to configurate a Neural Network
 	HiddenNodes int
 	OutputNodes int
 	Epochs      int
-	LerningRate float64
+	LearningRate float64
 }
 
 func (nn *NeuralNetwork) InitNeuralNetwork(nnConfig NNconfig)
@@ -76,7 +76,7 @@ type DataSetInterface interface {
 ```go
 import (
     // .... and 
-	DSP "github.com/hfried/ownNN/dataset_port"
+	DSP "github.com/hfried/GoNN/dataset_port"
 )
 
 var mnistNNconfig NNconfig = NNconfig{InputNodes: 784, HiddenNodes: 200, OutputNodes: 10, Epochs: 1, LerningRate: 0.2}
