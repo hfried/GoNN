@@ -42,9 +42,9 @@ type NNconfig struct { // to configurate a Neural Network
 	LearningRate float64
 }
 
-func (nn *NeuralNetwork) InitNeuralNetwork(nnConfig NNconfig)
-func (nn *NeuralNetwork) Train(ds DataSetInterface, epochs int, learningRate float64) (err error) 
-func (nn *NeuralNetwork) Test(ds DataSetInterface) (result float64, err error) 
+func (nn *NeuralNetwork) InitNeuralNetwork(nnConfig NNconfig) {}
+func (nn *NeuralNetwork) Train(ds DataSetInterface, epochs int, learningRate float64) (err error) {}
+func (nn *NeuralNetwork) Test(ds DataSetInterface) (result float64, err error) {}
 ```
 
 # The Data Set Port - Interface
