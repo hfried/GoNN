@@ -79,10 +79,12 @@ import (
 	DSP "github.com/hfried/GoNN/dataset_port"
 )
 
-var mnistNNconfig NNconfig = NNconfig{InputNodes: 784, HiddenNodes: 200, OutputNodes: 10, Epochs: 1, LerningRate: 0.2}
+var mnistNNconfig NNconfig = NNconfig{InputNodes: 784, HiddenNodes: 200, OutputNodes: 10, 
+                                      Epochs: 1, LerningRate: 0.2}
 
-var mnistDSconfig DSP.DSconfig = DSP.DSconfig{InputData: 784, OutputData: 1, PathName: "mnist_dataset/", TrainingFileName: "mnist_train.csv",
-	ValidationFileName: "", TestFileName: "mnist_test.csv"}
+var mnistDSconfig DSP.DSconfig = DSP.DSconfig{InputData: 784, OutputData: 1, 
+                         PathName: "mnist_dataset/", TrainingFileName: "mnist_train.csv",
+	                 ValidationFileName: "", TestFileName: "mnist_test.csv"}
 
 func trainAndTest(nnConfig NNconfig, dsConfig DSP.DSconfig) (error, float64) {
 
@@ -109,20 +111,23 @@ func main() {
     startTime := time.Now()
 	jahr, mon, tag := startTime.Date()
 	stunde, minute, sekunde := startTime.Clock()
-	fmt.Printf("Start: %02d.%02d.%d  %02d:%02d:%02d with %d Epochs\n", tag, mon, jahr, stunde, minute, sekunde, mnistNNconfig.Epochs)
+	fmt.Printf("Start: %02d.%02d.%d  %02d:%02d:%02d with %d Epochs\n", 
+	          tag, mon, jahr, stunde, minute, sekunde, mnistNNconfig.Epochs)
 
 	err, result := trainAndTest(mnistNNconfig, mnistDSconfig)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
-	fmt.Printf("Hit rate: %.2f%% \nused time: %s\n", result*100.0, time.Now().Sub(startTime))
+	fmt.Printf("Hit rate: %.2f%% \nused time: %s\n", result*100.0, 
+	            time.Now().Sub(startTime))
 }
 ```
 
 # To get Profile Information
 
-(see: https://golang.org/pkg/runtime/pprof/  and https://github.com/google/pprof/blob/master/doc/pprof.md )
+(see: https://golang.org/pkg/runtime/pprof/  
+ and https://github.com/google/pprof/blob/master/doc/pprof.md )
 
 ```go
 func main() {
